@@ -25,7 +25,7 @@ export function PostCard({ post }: PostCardProps) {
         })}
       </p>
       <h2 className="text-2xl font-bold mb-3">
-        <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
+        <Link href={`/blog/${post.slug}`} className="text-primary/90 hover:text-primary transition-colors">
           <span className="absolute inset-0" aria-hidden="true"></span>
           {post.title}
         </Link>

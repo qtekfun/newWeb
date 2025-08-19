@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { CodeXml } from 'lucide-react';
+import { ThemeSwitcher } from './theme-switcher';
 
 export function Header() {
   return (
@@ -16,6 +17,7 @@ export function Header() {
           <Link href="/about" className="transition-colors hover:text-primary">
             About
           </Link>
+          <ThemeSwitcher />
         </div>
       </nav>
     </header>
