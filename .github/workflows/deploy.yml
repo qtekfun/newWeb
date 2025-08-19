@@ -17,12 +17,18 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action-nextjs@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          # Point to the directory where your Next.js app is located.
-          # (This defaults to the repository root.)
-          path: .
+          node-version: '20' # Or your desired Node.js version
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Next.js app
+        run: npm run build
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
 
   deploy:
     needs: build
