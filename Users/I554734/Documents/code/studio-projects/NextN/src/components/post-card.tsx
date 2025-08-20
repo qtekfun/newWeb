@@ -12,7 +12,7 @@ export function PostCard({ post }: PostCardProps) {
     <article className="group relative rounded-lg border bg-card p-6 transition-shadow hover:shadow-lg">
       <div className="flex flex-wrap gap-2 mb-2">
         {post.tags.map((tag) => (
-          <Link href={`/newWeb/tags/${tag}`} key={tag} className="z-10 relative">
+          <Link href={`/tags/${tag}`} key={tag} className="z-10 relative">
             <Badge variant="secondary" className="hover:bg-accent">{tag}</Badge>
           </Link>
         ))}
@@ -25,7 +25,7 @@ export function PostCard({ post }: PostCardProps) {
         })}
       </p>
       <h2 className="text-2xl font-bold mb-3">
-        <Link href={`/newWeb/blog/${post.slug}`} className="text-primary/90 hover:text-primary transition-colors">
+        <Link href={`/blog/${post.slug}`} className="text-primary/90 hover:text-primary transition-colors">
           <span className="absolute inset-0" aria-hidden="true"></span>
           {post.title}
         </Link>

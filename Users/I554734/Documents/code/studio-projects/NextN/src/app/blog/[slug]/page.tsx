@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const awaitedParams = await params;
+  const post = getPostBySlug(awaitedParams.slug);
   if (!post) {
     return {
       title: 'Post Not Found',
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: { params: { slug: string } }) {
+  const awaitedParams = await params;
+  const post = getPostBySlug(awaitedParams.slug);
 
   if (!post) {
     notFound();
@@ -47,7 +49,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         </p>
         <div className="flex justify-center flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <Link href={`/newWeb/tags/${tag}`} key={tag}>
+            <Link href={`/tags/${tag}`} key={tag}>
               <Badge variant="secondary" className="text-sm cursor-pointer hover:bg-accent">
                 #{tag}
               </Badge>
