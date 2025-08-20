@@ -1,12 +1,9 @@
 import type {NextConfig} from 'next';
 
-const repo = 'newWeb';
-const basePath = `/${repo}`;
-
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  basePath: basePath,
+  basePath: '/newWeb',
   typescript: {
     ignoreBuildErrors: true,
   },
