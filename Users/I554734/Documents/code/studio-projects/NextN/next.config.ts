@@ -1,6 +1,6 @@
 import type {NextConfig} from 'next';
 
-const repo = 'NextN';
+const repo = 'newWeb';
 const basePath = `/${repo}`;
 
 const nextConfig: NextConfig = {
