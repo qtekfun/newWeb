@@ -47,7 +47,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         </p>
         <div className="flex justify-center flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <Link href={`/tags/${tag}`} key={tag}>
+            <Link href={`/newWeb/tags/${tag}`} key={tag}>
               <Badge variant="secondary" className="text-sm cursor-pointer hover:bg-accent">
                 #{tag}
               </Badge>
